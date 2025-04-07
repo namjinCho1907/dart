@@ -1,5 +1,19 @@
-import 'package:my_dart_project/my_dart_project.dart' as my_dart_project;
+int sumDigits(int number) {
+  if (number <= 0) return number;
 
-void main(List<String> arguments) {
-  print('Hello world: ${my_dart_project.calculate()}!');
+  int sum = 0;
+  while (number > 0) {
+    sum += number % 10;
+    number ~/= 10; // 정수 나눗셈
+  }
+
+  return sum;
+}
+
+void main() {
+  print(sumDigits(123));      // 6
+  print(sumDigits(5));        // 5
+  print(sumDigits(-1));       // -1
+  print(sumDigits(-123));     // -123
+  print(sumDigits(345321));   // 18
 }
